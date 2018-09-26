@@ -92,6 +92,29 @@ Add the file `vc_notes.Rmd`.
 brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add vc_notes.Rmd
 ```
 
+Commit the file with a message
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m "Initialise version control notes"
+[master (root-commit) d4861c3] Initialise version control notes
+ 1 file changed, 91 insertions(+)
+ create mode 100644 vc_notes.Rmd
+
+```
+
+Add the rest of the files, then commit
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add *
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m "Initialise rest of files"
+[master 8f5ea29] Initialise rest of files
+ 3 files changed, 285 insertions(+)
+ create mode 100644 git_cheat_sheet.pdf
+ create mode 100644 vc_notes.html
+```
+
+
+
 
 7. How to use git in GitKraken 
 ================================================================================
