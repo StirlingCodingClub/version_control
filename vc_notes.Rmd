@@ -1,0 +1,91 @@
+---
+title: "Version control for reproducible science"
+author: "Brad Duthie"
+date: "26 September 2018"
+output: html_document
+---
+
+
+<!---
+
+1. Initialise a new repository in StirlingCodingClub for how to understand and use git
+2. Write up an Rmarkdown document introducing version control and how to get started with it in the command line and with GitKraken (would try to do by this WED).
+3. As part of the Rmarkdown document, include a diverse list of outside links where people can go to get more help.
+4. Post the slides early so that people know what to expect, give the opportunity for people to ask questions before arriving.
+5. On 3 OCT, go through the slides, then demonstrate how to use git on the command line and GitKraken, allowing others to follow along.
+6. Leave the repository up and address questions as issues when they arise.
+
+--->
+
+Introduction
+================================================================================
+
+- [git](): A software for version control
+- [GitHub](): A website that enables collaboration and use of git
+- [repository (repo)](): A folder that is using git
+
+1. What is version control? {.what_is_vc}
+================================================================================
+
+
+2. Why use version control? {.why_is_vc}
+================================================================================
+
+- Keep track of files that are edited by multiple collaborators simultaneously
+- Easy way to undo changes to any point in the past
+- Back up the entire history of a project
+
+3. What is git? {.what_is_git}
+================================================================================
+
+- Open-source version control developed by Linus Torvalds
+- Not an acronym for anything
+- Not the same thing as [GitHub](http://github.com), which is a repository for git
+
+
+4. How does version control work? {.how_does_vc}
+================================================================================
+
+
+
+5. How to use git in GitHub {.how_use_gh}
+================================================================================
+
+
+6. How to use git in the command line {.how_use_CLI}
+================================================================================
+
+
+7. How to use git in GitKraken 
+================================================================================
+
+
+
+8. How to use git in Rstudio
+================================================================================
+
+
+9. Additional resources
+================================================================================
+
+**Introductions to version control (guides)**
+
+- [British Ecological Society: A guide to reproducible code in ecology and evolution](https://www.britishecologicalsociety.org/wp-content/uploads/2017/12/guide-to-reproducible-code.pdf)
+- [An introduction to version control](http://guides.beanstalkapp.com/version-control/intro-to-version-control.html)
+
+**Introductions to version control (videos)**
+
+- [Git and GitHub for Poets: Intro](https://www.youtube.com/watch?v=BCQHnlnPusY) (no programming knowledge needed)
+- [Git and GitHub for Poets: Branches](https://www.youtube.com/watch?v=oPpnCh7InLY)
+
+
+
+
+
+
+
+
+
+
+
+
