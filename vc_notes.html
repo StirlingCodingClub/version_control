@@ -176,7 +176,7 @@ $(document).ready(function () {
 <h1>6. How to use git in the command line</h1>
 <p>Go to the folder where you want to initialise the git repository.</p>
 <pre class="bash"><code>brad@duthie-pc:~$ cd Dropbox/projects/StirlingCodingClub/version_control</code></pre>
-<p>Initialise the git repository.</p>
+<p>Initialise the git repository with <code>git init</code>.</p>
 <pre class="bash"><code>brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git init
 Initialised empty Git repository in /home/brad/Dropbox/projects/StirlingCodingClub/version_control/.git/</code></pre>
 <p>See the status of the git repository.</p>
@@ -195,6 +195,42 @@ Untracked files:
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
 <p>Add the file <code>vc_notes.Rmd</code>.</p>
 <pre class="bash"><code>brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add vc_notes.Rmd</code></pre>
+<p>Commit the file with a message</p>
+<pre class="bash"><code>brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m &quot;Initialise version control notes&quot;
+[master (root-commit) d4861c3] Initialise version control notes
+ 1 file changed, 91 insertions(+)
+ create mode 100644 vc_notes.Rmd
+</code></pre>
+<p>Add the rest of the files, then commit</p>
+<pre class="bash"><code>brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add *
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m &quot;Initialise rest of files&quot;
+[master 8f5ea29] Initialise rest of files
+ 3 files changed, 285 insertions(+)
+ create mode 100644 git_cheat_sheet.pdf
+ create mode 100644 vc_notes.html</code></pre>
+<p>Look at the status</p>
+<pre class="bash"><code>brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git status
+On branch master
+nothing to commit, working directory clean</code></pre>
+<p>Look at the git log</p>
+<pre class="bash"><code>brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git log
+commit 6ddbaab81cda02f1e8ba116151456cef1f713f34
+Author: Brad Duthie &lt;brad.duthie@gmail.com&gt;
+Date:   Wed Sep 26 18:01:26 2018 +0100
+
+    Add more notes
+
+commit 8f5ea29c9bf37f5ba463c65ccb7bca0742b6c2bc
+Author: Brad Duthie &lt;brad.duthie@gmail.com&gt;
+Date:   Wed Sep 26 17:57:28 2018 +0100
+
+    Initialise rest of files
+
+commit d4861c30af1aefdc67f171bdef59731139545996
+Author: Brad Duthie &lt;brad.duthie@gmail.com&gt;
+Date:   Wed Sep 26 17:56:27 2018 +0100
+
+    Initialise version control notes</code></pre>
 </div>
 <div id="how-to-use-git-in-gitkraken" class="section level1">
 <h1>7. How to use git in GitKraken</h1>

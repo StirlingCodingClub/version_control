@@ -55,13 +55,18 @@ Introduction
 6. How to use git in the command line {.how_use_CLI}
 ================================================================================
 
+
+- Cheat sheet
+- Quick guide
+- [Intro to the command line](https://www.youtube.com/watch?v=oK8EvVeVltE)
+
 Go to the folder where you want to initialise the git repository.
 
 ```{bash, eval = FALSE}
 brad@duthie-pc:~$ cd Dropbox/projects/StirlingCodingClub/version_control
 ```
 
-Initialise the git repository with `git init`.
+[Initialise](https://www.youtube.com/watch?v=9p2d-CuVlgc) the git repository with `git init`.
 
 ```{bash, eval = FALSE}
 brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git init
@@ -86,7 +91,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-Add the file `vc_notes.Rmd`.
+[Add](https://www.youtube.com/watch?v=9p2d-CuVlgc) the file `vc_notes.Rmd`.
 
 ```{bash, eval = FALSE}
 brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add vc_notes.Rmd
@@ -113,7 +118,36 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit
  create mode 100644 vc_notes.html
 ```
 
+Look at the status
 
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git status
+On branch master
+nothing to commit, working directory clean
+```
+
+Look at the git log
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git log
+commit 6ddbaab81cda02f1e8ba116151456cef1f713f34
+Author: Brad Duthie <brad.duthie@gmail.com>
+Date:   Wed Sep 26 18:01:26 2018 +0100
+
+    Add more notes
+
+commit 8f5ea29c9bf37f5ba463c65ccb7bca0742b6c2bc
+Author: Brad Duthie <brad.duthie@gmail.com>
+Date:   Wed Sep 26 17:57:28 2018 +0100
+
+    Initialise rest of files
+
+commit d4861c30af1aefdc67f171bdef59731139545996
+Author: Brad Duthie <brad.duthie@gmail.com>
+Date:   Wed Sep 26 17:56:27 2018 +0100
+
+    Initialise version control notes
+```
 
 
 7. How to use git in GitKraken 
@@ -137,7 +171,7 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit
 
 - [Git and GitHub for Poets: Intro](https://www.youtube.com/watch?v=BCQHnlnPusY) (no programming knowledge needed)
 - [Git and GitHub for Poets: Branches](https://www.youtube.com/watch?v=oPpnCh7InLY)
-
+- [Git and GitHub for Poets: Fork and Pull](https://www.youtube.com/watch?v=_NrSWLQsDL4)
 
 
 
