@@ -20,7 +20,7 @@ output: html_document
 Introduction
 ================================================================================
 
-- [git](): A software for version control
+- [git](https://git-scm.com/): A software for version control
 - [GitHub](http://github.com): A website that enables collaboration and use of git
 - [repository (repo)](): A folder that is using git
 
