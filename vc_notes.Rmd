@@ -21,11 +21,13 @@ Introduction
 ================================================================================
 
 - [git](): A software for version control
-- [GitHub](): A website that enables collaboration and use of git
+- [GitHub](http://github.com): A website that enables collaboration and use of git
 - [repository (repo)](): A folder that is using git
 
 1. What is version control? {.what_is_vc}
 ================================================================================
+
+[Version control](https://en.wikipedia.org/wiki/Version_control) is any system that records changes made within a repository over time so that different versions of files can be managed and, if necessary, recovered.
 
 
 2. Why use version control? {.why_is_vc}
