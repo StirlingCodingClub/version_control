@@ -62,36 +62,6 @@ Introduction
 - Quick guide
 - [Intro to the command line](https://www.youtube.com/watch?v=oK8EvVeVltE)
 
-Go to the folder where you want to initialise the git repository.
-
-```{bash, eval = FALSE}
-brad@duthie-pc:~$ cd Dropbox/projects/StirlingCodingClub/version_control
-```
-
-[Initialise](https://www.youtube.com/watch?v=9p2d-CuVlgc) the git repository with `git init`.
-
-```{bash, eval = FALSE}
-brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git init
-Initialised empty Git repository in /home/brad/Dropbox/projects/StirlingCodingClub/version_control/.git/
-```
-
-See the status of the git repository.
-
-```{bash, eval = FALSE}
-brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git status
-On branch master
-
-Initial commit
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	git_cheat_sheet.pdf
-	vc_notes.Rmd
-	vc_notes.html
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
 
 [Add](https://www.youtube.com/watch?v=9p2d-CuVlgc) the file `vc_notes.Rmd`.
 
@@ -152,12 +122,115 @@ Date:   Wed Sep 26 17:56:27 2018 +0100
 ```
 
 
-7. How to use git in GitKraken 
+7. Using GitKraken & Command Line Interface (CLI)
 ================================================================================
 
-Look at the repository in [GitKraken](http://gitkraken.com)
+This set of instructions will get you started working with git and GitHub.
+
+Step 1: Initialising a git repository
+--------------------------------------------------------------------------------
+
+Initialise a git repository using [GitKraken](http://gitkraken.com) by specifying the folder on your computer where you want the repository to be initialised by selecting the 'Init' tab (far left) and the 'Local' tab (top left) within GitKraken. If you cannot figure out how to get the the image below, go to the upper left folder icon within GitKraken.
+
+![The GitKraken interface](images/GitKraken_init.png)
+
+<br>
+
+In the command line, this is done by first going to the folder where you want to initialise the repository.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~$ cd Dropbox/projects/StirlingCodingClub/version_control
+```
+
+Next, [initialise](https://www.youtube.com/watch?v=9p2d-CuVlgc) the git repository with `git init`.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git init
+Initialised empty Git repository in /home/brad/Dropbox/projects/StirlingCodingClub/version_control/.git/
+```
+
+You now have a local repository initialised and are ready to start using git. Note that the repository is not yet linked with GitHub, but you can still view the repository within [GitKraken](http://gitkraken.com). The image below shows the version_control repository during an early stage of development (but several commits after initialisation). Each of the four cyan circles shows an individual commit with a message about what the commit is doing. I can go back to see what the directory looked like in a previous commit by clicking one of these circles.
 
 ![The GitKraken interface](images/GitKraken_1.png)
+
+<br>
+
+Note that the bottom area of the GitKraken interface shows the changes made during the last commit. You can also see the status of the git repository using the command line `git status`, which returns something like the below.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	git_cheat_sheet.pdf
+	vc_notes.Rmd
+	vc_notes.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+The command `git log` returns a list of previous git commits (equivalent to the cyan circles in the GitKraken interface shown above). I will explain this more later, but first let's link the newly created git repository with GitHub.
+
+
+Step 2: Linking your repository with GitHub
+--------------------------------------------------------------------------------
+
+To link GitKraken with your GitHub account, first go to GitHub and login. Next find and click the button that looks like the one below.
+
+![](images/GitHub_new.png)
+
+<br>
+
+This will take you to the page that allows you to set up a new repository. **Be sure to use the same repository name on GitHub that you do on your local computer**, and avoid the use of spaces.
+
+![](images/GitHub_create_rep.png)
+
+<br>
+
+After you click the green button 'Create repository', GitHub will take you to a place that gives you a URL for a quick setup. The URL for the version_control repository that I just set up is below.
+
+![](images/GitHub_URL.png)
+
+<br>
+
+Copy that URL, then go back to GitKraken. Look at the left-hand side of the interface which has names that include 'Local', 'Remote', 'Pull Requests', etc. Hover over the 'Remote' tab and a green '+' should appear for you to click. This will open a box like the one below with the options 'URL', 'GitHub.com', and 'Bitbucket.org'.
+
+![](images/GitKraken_add_remote.png)
+
+<br>
+
+Confusingly, you do not want to select the 'GitHub.com' tab. Select the URL tab instead; type in the repository name (the name on GitHub should be the same as the folder name on your computer), then paste the copied URL above into the 'Pull URL' field. The 'Push URL' field should be identical to the 'Pull URL' field. After you click the green 'Add Remote' button, you should be able to go back to the GitKraken interface and click the 'Push' button.
+
+![](images/GitKraken_top.png)
+
+<br>
+
+After you click 'Push', you will be asked what branch to push and pull from. Keep 'master' for now and just click 'Submit'.
+
+![](images/GitKraken_push.png)
+
+<br>
+
+Now if you go back to GitHub, you should see any files you had in your repository appear. 
+
+If you want to link your local repository with GitHub using the command line instead of GitKraken, then after creating a new repository on GitHub, use the command below.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git remote add origin https://github.com/bradduthie/version_control.git
+```
+
+You can then push all of your files to the GitHub repository with the command below.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git push -u origin master
+```
+
+You should now have a git repository up and running on your local machine, and a linked version on GitHub. Next I will explain how to add and commit changes to files.
+
 
 8. How to use git in Rstudio
 ================================================================================
