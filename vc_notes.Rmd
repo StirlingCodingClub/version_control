@@ -153,7 +153,9 @@ Date:   Wed Sep 26 17:56:27 2018 +0100
 7. How to use git in GitKraken 
 ================================================================================
 
+Look at the repository in [GitKraken](http://gitkraken.com)
 
+![The GitKraken interface](images/GitKraken_1.png)
 
 8. How to use git in Rstudio
 ================================================================================
