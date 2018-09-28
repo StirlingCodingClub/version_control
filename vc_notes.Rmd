@@ -231,6 +231,9 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git push -
 
 You should now have a git repository up and running on your local machine, and a linked version on GitHub. Next I will explain how to add and commit changes to files.
 
+Step 3: Add and commit files
+--------------------------------------------------------------------------------
+
 
 8. How to use git in Rstudio
 ================================================================================
