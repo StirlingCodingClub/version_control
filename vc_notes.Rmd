@@ -351,11 +351,37 @@ GitKraken will then ask you to write a new name for a branch on your timeline. I
 The new branch 'restructure' starts off in the exact same place as the old 'master' branch did. The files have not changed at all -- branching simply tells git to keep everything in the 'master' branch as is, but start a new branch ('restructure', in this case) to which new commits are recorded (but do not affect the master branch). Hence, any new commits that we make will start a whole new path of commit history.
 
 ![](images/GitKraken_branch_2.png)
+
 <br>
 
-The above now shows two branches, with 'restructure' diverging from the main 'master' branch.
+The above now shows two branches, with 'restructure' diverging from the main 'master' branch. If you want to go back and look at where you left off with the master branch, you can just double click on 'master' to the left of the commit history. When you do this, your repository will automatically revert back to what it looked like at this point in time. **Don't panic if things change**; if you have added files since starting a new branch, they won't be here when you go back to master, but still exist in the new branch. The way this works behind the scenes is that git stores a hidden folder in your git repository called `.git` (I've told my operating system to show hidden files, so you can see this below). 
 
-For large projects (e.g., [an R package](https://github.com/ConFooBio/gmse/branches) with code, documentation, and a manuscript), I'll typically have a master branch of publication quality (`master`), a development branch where everything appears to be working (`dev`), a branch where revisions are taking place (`rev`), and several temporary branches for experimenting with new writing or code.
+![](images/Git_hidden.png)
+
+<br>
+
+Within this hidden folder, all of the history and branches are stored (**don't delete this**).
+
+![](images/Git_hidden_inside.png)
+
+Back in GitKraken, you can shift between branches 'master' and 'restructure' as you wish by clicking on them. In the command line, you can start a new branch with the command `git branch branch_name`, so making the branch 'restructure' would be done as below.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git branch restructure
+```
+
+But this only tells git to create a new branch; it doesn't tell git that we want to move to that branch and start making changes to it instead of 'master'. To move among branches, use the `checkout` command.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git checkout restructure
+```
+
+
+For now, I will only make changes to 'restructure', using it as a place to experiment with new changes to the repository. I'll leave 'master' as it is, but it is entirely possible to have multiple branches with changes being made independently on each. For large projects (e.g., [an R package](https://github.com/ConFooBio/gmse/branches) with code, documentation, and a manuscript), I'll typically have a master branch of publication quality (`master`), a development branch where everything appears to be working (`dev`), a branch where revisions are taking place (`rev`), and several temporary branches for experimenting with new writing or code.
+
+After adding some commits to the branch 'restructure', I might be satisfied with the changes to the repository and therefore want to merge the 'restructure' branch back into the 'master' branch. Merging means incorporating the changes made in one branch into another branch; this works seamlessly when the branch being merged into has not changed (i.e., if after creating and committing on the new branch 'restructure', the original 'master' branch remains untouched). Merging gets slightly more tricky if commits have been made to both branches since the time of branching, but more on this in a moment. To merge in GitKraken, make sure that you are on the branch that you want to merge *from* (i.e., the branch where you have made the changes that you are satisfied with). Then, right click on the branch that you want to merge into; there should be a pop up option that says, e.g, 'merge restrcuture into master'. 
+
+
 
 
 9. Additional resources
