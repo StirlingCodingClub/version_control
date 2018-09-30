@@ -304,7 +304,7 @@ You can ignore this, but better practice is to specify the remote (i.e., the URL
 brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git push origin master
 ```
 
-You now know how to push changes to GitHub using both GitKraken and the command line. Pulling changes from GitHub works in roughly the same way.
+You now know how to push changes to GitHub using both GitKraken and the command line. Pulling changes from GitHub works in roughly the same way. Say that I am away from my office computer, but have logged into my account on a public computer to [make changes to this Rmd file](https://github.com/bradduthie/version_control/edit/master/vc_notes.Rmd) directly from the browser. I commit these changes in the browswer using the GitHub interface, but now need to bring these changes into my home computer and GitKraken from GitHub.
 
 
 8. How to use git in Rstudio
