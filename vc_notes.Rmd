@@ -385,11 +385,10 @@ After adding some commits to the branch 'restructure', I might be satisfied with
 
 <br>
 
-The top toolbar above shows that I am onthe branch 'restructure', so I want to click the down arrow on the 'restructure' pull down and switch to 'master'.
+The top toolbar above shows that I am onthe branch 'restructure', so I want to click the down arrow on the 'restructure' pull down and switch to 'master'. Next, find the 'restructure' branch in the commit timeline (rectangle box to the left of the cyan cicles), right click, and select 'merge restructure into master'.  You should now see that the changes have been moved into 'master', and the branches 'master' and 'restructure' are now identical; you can continue to make commits on either branch, or, if there is no longer any need for the 'restructure' branch, it can be deleted by right clicking on it and selecting 'delete restructure'.
 
 
 Then, right click on the branch that you want to merge into; there should be a pop up option that says, e.g, 'merge restrcuture into master'. Click on this. You should now see that the changes have been moved into 'master', and the branches 'master' and 'restructure' are now identical; you can continue to make commits on either branch, or, if there is no longer any need for the 'restructure' branch, it can be deleted by right clicking on it and selecting 'delete restructure'.
-
 
 
 
