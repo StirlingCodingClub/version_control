@@ -234,6 +234,33 @@ You should now have a git repository up and running on your local machine, and a
 Step 3: Add and commit files
 --------------------------------------------------------------------------------
 
+Now that you have a repository ready to start tracking your changes, you can start making commits. The flow of this process as you work within your repository is typically (1) saving files, (2) adding (or 'staging') files , (3) committing files, and (4) pushing files too GitHub. Rather than saving the most recent changes that you've made to the files in your repository, the idea here is to save a snapshot of the whole repository using 'commit'. You can then always return to this commit to view what your repository looked like at a previous time. 
+
+![](images/GitKraken_2.png)
+
+In the above image, the history of commits is shown with in the cyan circles, along with a commit message written to explain the changes made in each commit (by convention, these are typically written in the present tense). So you can see that my most recent commits were to 'Add first image', and before that to 'Add some video links', etc. You can see what the directory looked like at these points by clicking on these commits (this is also possible in GitHub where you can see the [history of this repository](https://github.com/bradduthie/version_control/commits/master)). The very top shows WIP (work in progress), which is the directory as it looks at the moment.
+
+As you work on your files, continue to save things as you normally would; you need to save before files can be added or committed. In the above, you can see the files 'vc_notes.Rmd' and 'vc_notes.html'. These have been saved recently, which is why they are listed as 'Unstaged files' (shown with yellow icons). In the command line, we can see the equivalent of these saved but unstaged files by typing `git status`.
+
+```{bash, eval = FALSE}
+brad@brad-ThinkPad-X201:~/Dropbox/projects/StirlingCodingClub/version_control$ git status
+On branch master
+Your branch is up-to-date with 'version_control/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   vc_notes.Rmd
+	modified:   vc_notes.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+
+In the above, both files are listed as 'modified', but not staged.
+
+Now assume that we want to commit the changes we have saved, establishing a snapshot of the directory that we can return to in the future. The common wisdom in using version control is **"commit early, commit often"**, meaning that it is generally better to err on the side of commiting changes that you make to your repository more often than you think is necessary. In practice, I try to commit frequently, almost as often as I save file changes; even small changes can be useful to have their own commit because the changes are easier to read in small chunks rather than massive changes to files. To commit our changes, we need to 'stage' the files. You can stage all of the changed files at once, if desired, or you can stage only a subset of them (if, e.g., you wanted to record a change in one file, but wait to commit changes in another file).
+
 
 8. How to use git in Rstudio
 ================================================================================
