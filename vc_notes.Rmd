@@ -108,7 +108,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 The command `git log` returns a list of previous git commits (equivalent to the cyan circles in the GitKraken interface shown above). I will explain this more later, but first let's link the newly created git repository with GitHub.
 
 
-Step 2: Linking your repository with GitHub
+Step 2: Linking your repository with GitHub {.ghlink}
 --------------------------------------------------------------------------------
 
 To link GitKraken with your GitHub account, first go to GitHub and login. Next find and click the button that looks like the one below.
@@ -170,6 +170,8 @@ Now that you have a repository ready to start tracking your changes, you can sta
 
 ![](images/GitKraken_2.png)
 
+<br>
+
 In the above image, the history of commits is shown with in the cyan circles, along with a commit message written to explain the changes made in each commit (by convention, these are typically written in the present tense). So you can see that my most recent commits were to 'Add first image', and before that to 'Add some video links', etc. You can see what the directory looked like at these points by clicking on these commits (this is also possible in GitHub where you can see the [history of this repository](https://github.com/bradduthie/version_control/commits/master)). The very top shows WIP (work in progress), which is the directory as it looks at the moment.
 
 As you work on your files, continue to save things as you normally would; you need to save before files can be added or committed. In the above, you can see the files 'vc_notes.Rmd' and 'vc_notes.html'. These have been saved recently, which is why they are listed as 'Unstaged files' (shown with yellow icons). In the command line, we can see the equivalent of these saved but unstaged files by typing `git status`.
@@ -194,6 +196,8 @@ In the above, both files are listed as 'modified', but not staged.
 Now assume that we want to commit the changes we have saved, establishing a snapshot of the directory that we can return to in the future. The common wisdom in using version control is **"commit early, commit often"**, meaning that it is generally better to err on the side of commiting changes that you make to your repository more often than you think is necessary. In practice, I try to commit frequently, almost as often as I save file changes; even small changes can be useful to have their own commit because the changes are easier to read in small chunks rather than massive changes to files. To commit our changes, we need to 'stage' the files. You can stage all of the changed files at once, if desired, or you can stage only a subset of them (if, e.g., you wanted to record a change in one file, but wait to commit changes in another file). In GitKraken, staging is done simply by hovering over the file of interest in the 'Unstaged files' field, then clicking on the green 'Stage file' box that appears to the right of it. If you instead want to stage all files, then you can click on the 'Stage all changes' box in green.
 
 ![](images/GitKraken_3.png)
+
+<br>
 
 In the above screenshot, the 'vc_notes.Rmd' file has been staged, while the the changed file 'vc_notes.html' and image files in the subdirectory 'images' have not been staged. To stage a file in the command line, use the `git add` command. I have staged (or '[added](https://www.youtube.com/watch?v=9p2d-CuVlgc)') the file `vc_notes.Rmd` below. 
 
@@ -227,6 +231,8 @@ One last thing with respect to staging and committing files. One very useful fea
 
 ![](images/GitKraken_4.png)
 
+<br>
+
 In the above, the red refers to lines that have been removed, while the green shows lines that have been added. Once everything has been pushed to GitHub (see below), we can also see the record of these changes in the exact same way [on the GitHub repository](https://github.com/bradduthie/version_control/commit/31882672c0afe6fc20dab31939b3a5da23ca19dd). To interpret the above, we can see that the GitHub URL has been added to line 24, and a new line 30 talking about 'Version control' has been added. **Note that you can only see changes to text files in this way** (e.g., R, Rmd, TXT, CSV, HTML, MKD). If we try to look at the changes to non-text files (e.g., any image files, DOCX, DOC, PDF), it won't work (i.e., if you can open a file and read it in Rstudio, notepad, or some other text editor, then you'll be able to see changes in git; if you can't open it in one of these programs, you can still stage and commit the files in git, but you won't be able to see changes). 
 
 To see changes of *unstaged* files in the command line, use the command `git diff`.
@@ -242,6 +248,63 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git diff -
 ```
 
 You are now able to stage and commit files in GitKraken and the command line. This is most of what you'll do with version control, and all that you need to get started. Next, I'll show you how to push your commits to GitHub, and pull changes from GitHub to your local branch. Once you're able to do this, you will have all of the necessary skills for using git and GitHub effectively in your own projects; after that, I'll explain some of the features that make git such an effective tool for collaboration.
+
+Step 4: Pushing and pulling with GitHub
+--------------------------------------------------------------------------------
+
+Assuming that you have [linked your local repository with GitHub](#ghlink), uploading the changes that you commit to GitHub (pushing), and downloading changes on GitHub and incorporating them into your local repository (pulling) is easy with GitKraken. You should see a top bar in GitKraken that looks like the below.
+
+![](images/GitKraken_top.png)
+
+<br>
+
+To push all of your commits to your GitHub account online, simply hit the 'Push' button. You might be prompted to specify where to push.
+
+
+![](images/GitKraken_push.png)
+
+<br>
+
+Make sure that the choice from the pull down (in this case, 'version_control') matches the repository name on GitHub ([see it here](https://github.com/bradduthie/version_control)), and keep the branch 'master' for now. Click on the green 'Submit' button, and you should succcessfully have pushed to GitHub. To see the changes made, you can go to the [commit history](https://github.com/bradduthie/version_control/commits/master) in your GitHub repository.
+
+In the command line, you can push with the following command. Note that you'll be asked to type your GitHub name and password.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git push
+```
+
+The above will work, and push correctly to your GitHub repository, but git might also complain with something like the below.
+
+```
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behaviour, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behaviour now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behaviour, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+```
+
+You can ignore this, but better practice is to specify the remote (i.e., the URL where the code is stored) and the branch whenever you push. In the case of the below, the remote is 'origin' and the branch is 'master' (more on branches later).
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git push origin master
+```
+
+You now know how to push changes to GitHub using both GitKraken and the command line. Pulling changes from GitHub works in roughly the same way.
 
 
 8. How to use git in Rstudio
