@@ -54,73 +54,10 @@ Introduction
 ================================================================================
 
 
-6. How to use git in the command line {.how_use_CLI}
+6. Using GitKraken & Command Line Interface (CLI)
 ================================================================================
 
-
-- Cheat sheet
-- Quick guide
-- [Intro to the command line](https://www.youtube.com/watch?v=oK8EvVeVltE)
-
-
-
-Commit the file with a message
-
-```{bash, eval = FALSE}
-brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m "Initialise version control notes"
-[master (root-commit) d4861c3] Initialise version control notes
- 1 file changed, 91 insertions(+)
- create mode 100644 vc_notes.Rmd
-
-```
-
-Add the rest of the files, then commit
-
-```{bash, eval = FALSE}
-brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add *
-brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m "Initialise rest of files"
-[master 8f5ea29] Initialise rest of files
- 3 files changed, 285 insertions(+)
- create mode 100644 git_cheat_sheet.pdf
- create mode 100644 vc_notes.html
-```
-
-Look at the status
-
-```{bash, eval = FALSE}
-brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git status
-On branch master
-nothing to commit, working directory clean
-```
-
-Look at the git log
-
-```{bash, eval = FALSE}
-brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git log
-commit 6ddbaab81cda02f1e8ba116151456cef1f713f34
-Author: Brad Duthie <brad.duthie@gmail.com>
-Date:   Wed Sep 26 18:01:26 2018 +0100
-
-    Add more notes
-
-commit 8f5ea29c9bf37f5ba463c65ccb7bca0742b6c2bc
-Author: Brad Duthie <brad.duthie@gmail.com>
-Date:   Wed Sep 26 17:57:28 2018 +0100
-
-    Initialise rest of files
-
-commit d4861c30af1aefdc67f171bdef59731139545996
-Author: Brad Duthie <brad.duthie@gmail.com>
-Date:   Wed Sep 26 17:56:27 2018 +0100
-
-    Initialise version control notes
-```
-
-
-7. Using GitKraken & Command Line Interface (CLI)
-================================================================================
-
-This set of instructions will get you started working with git and GitHub.
+This set of instructions will get you started working with git and GitHub. Throughout this guide, I will explain how to use the basic functions of git and link git with GitHub using both the free software [GitKraken](http://gitkraken.com) and the command line interface. **You do not need to know both GitKraken and the command line to use git**. One method for using git is sufficient, and unless you are already familiar with the command line, or wish to make it a part of your work flow, then I recommend using GitKraken to start off with git (i.e., feel free to ignore all of the command line instructions that follow).
 
 Step 1: Initialising a git repository
 --------------------------------------------------------------------------------
@@ -264,8 +201,47 @@ In the above screenshot, the 'vc_notes.Rmd' file has been staged, while the the 
 brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add vc_notes.Rmd
 ```
 
-Committing the staged file is easy in GitKraken. Simply add a commit message. In the above example, this message is 'Making a commit in Gitkraken', with further (optional) description in the message below. In general, it is a good idea to make commit messages meaningful, so that you can understand the history of changes in a repository and easily refer back to key points in development (e.g., "Add new linear model analysis" or "Make edits to first paragraph of manuscript"). In practice, [it's easy to get lazy](https://xkcd.com/1296/) with this. To finalise the commit in GitKraken, just click the big green 'Commit' button. 
+If you want to add all unstaged files in the directory, you can do so using an asterisk, as below.
 
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add *
+```
+
+This is also handy if you want to only add files in a single subdirectory; if, for example, you only wanted to add the images in the image folder.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add images*
+```
+
+The asterisk just means 'anything after' whatever you've typed (in this case, anything after 'images'). You can also use it in front of text. If, e.g., you want to only add `Rmd` files, then you could use ``git add *.Rmd`.
+
+Committing the staged file is easy in GitKraken. Simply add a commit message. In the above example, this message is 'Making a commit in Gitkraken', with further (optional) description in the message below. In general, it is a good idea to make commit messages meaningful, so that you can understand the history of changes in a repository and easily refer back to key points in development (e.g., "Add new linear model analysis" or "Make edits to first paragraph of manuscript"). In practice, [it's easy to get lazy](https://xkcd.com/1296/) with this. To finalise the commit in GitKraken, just click the big green 'Commit' button. You will then see another addition to your commit history in the GitKraken interface (another cyan circle added to the chain). In the command line, you can commit as follows.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m "Making a commit in the command line"
+```
+
+To see the history of commits at any time in the command line, type `git log`.
+
+One last thing with respect to staging and committing files. One very useful feature of git is the ability to see changes that are made to files from one commit to the next. You can do this in GitKraken simply by clicking the staged, unstaged, or already committed file. What you'll see is a record of the changes that have been made since the previous commit.
+
+![](images/GitKraken_4.png)
+
+In the above, the red refers to lines that have been removed, while the green shows lines that have been added. Once everything has been pushed to GitHub (see below), we can also see the record of these changes in the exact same way [on the GitHub repository](https://github.com/bradduthie/version_control/commit/31882672c0afe6fc20dab31939b3a5da23ca19dd). To interpret the above, we can see that the GitHub URL has been added to line 24, and a new line 30 talking about 'Version control' has been added. **Note that you can only see changes to text files in this way** (e.g., R, Rmd, TXT, CSV, HTML, MKD). If we try to look at the changes to non-text files (e.g., any image files, DOCX, DOC, PDF), it won't work (i.e., if you can open a file and read it in Rstudio, notepad, or some other text editor, then you'll be able to see changes in git; if you can't open it in one of these programs, you can still stage and commit the files in git, but you won't be able to see changes). 
+
+To see changes of *unstaged* files in the command line, use the command `git diff`.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git diff vc_notes.Rmd
+```
+
+For already staged files, use the command below.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git diff --cached vc_notes.Rmd
+```
+
+You are now able to stage and commit files in GitKraken and the command line. This is most of what you'll do with version control, and all that you need to get started. Next, I'll show you how to push your commits to GitHub, and pull changes from GitHub to your local branch. Once you're able to do this, you will have all of the necessary skills for using git and GitHub effectively in your own projects; after that, I'll explain some of the features that make git such an effective tool for collaboration.
 
 
 8. How to use git in Rstudio
