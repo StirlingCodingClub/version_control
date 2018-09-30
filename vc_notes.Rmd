@@ -335,6 +335,25 @@ That's all there is to it. You now have all of the tools that you need to save c
 Step 4: Branches in git
 --------------------------------------------------------------------------------
 
+Creating and merging branches in git is an extremely useful tool in work flow. For large projects, I will typically reserve the 'master' branch as a sort of stable version in which I am confident that everything works as intended, and do all new work on a separate branch, only merging to the master branch when I am satisfied that what I have done is sufficient. Then, if I am unsatisfied, I can just abandon my working branch, or delete it. In GitKraken, branching is easy. Just click the 'Branch' button on the top tool bar.
+
+![](images/GitKraken_top.png)
+
+<br>
+
+GitKraken will then ask you to write a new name for a branch on your timeline. In the case of the below, I have titled the new branch 'restructure'. 
+
+
+![](images/GitKraken_branch.png)
+
+<br>
+
+The new branch 'restructure' starts off in the exact same place as the old 'master' branch did. The files have not changed at all -- branching simply tells git to keep everything in the 'master' branch as is, but start a new branch ('restructure', in this case) to which new commits are recorded (but do not affect the master branch). Hence, any new commits that we make will start a whole new path of commit history.
+
+![](images/GitKraken_branch_2.png)
+<br>
+
+For large projects (e.g., [an R package](https://github.com/ConFooBio/gmse/branches) with code, documentation, and a manuscript), I'll typically have a master branch of publication quality (`master`), a development branch where everything appears to be working (`dev`), a branch where revisions are taking place (`rev`), and several temporary branches for experimenting with new writing or code.
 
 
 9. Additional resources
