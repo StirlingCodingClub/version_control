@@ -304,11 +304,37 @@ You can ignore this, but better practice is to specify the remote (i.e., the URL
 brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git push origin master
 ```
 
-You now know how to push changes to GitHub using both GitKraken and the command line. Pulling changes from GitHub works in roughly the same way. Say that I am away from my office computer, but have logged into my account on a public computer to [make changes to this Rmd file](https://github.com/bradduthie/version_control/edit/master/vc_notes.Rmd) directly from the browser. I commit these changes in the browswer using the GitHub interface, but now need to bring these changes into my home computer and GitKraken from GitHub.
+You now know how to push changes to GitHub using both GitKraken and the command line. Pulling changes from GitHub works in roughly the same way. Say that I am away from my office computer, but have logged into my account on a public computer to [make changes to this Rmd file](https://github.com/bradduthie/version_control/edit/master/vc_notes.Rmd) directly from the browser. I commit these changes in the browswer using the GitHub interface, but now need to bring these changes into my home computer and GitKraken from GitHub. As a reminder, if you ever want to edit a text file within GitHub, select the file in your GitHub repository, then click on the pencil icon to the left of the rubbish bin icon.
 
+![](images/GitHub_file.png)
 
-8. How to use git in Rstudio
-================================================================================
+<br>
+
+To commit any changes you make, scroll all the way down.
+
+![](images/GitHub_commit.png)
+
+<br>
+
+Click the green button to commit a change.
+
+To pull your change in GitKraken, just click on the 'Pull' icon. Your commits from GitHub should be incorporated automatically, assuming that there is no conflict in merging (more on that later).
+
+![](images/GitKraken_top.png)
+
+<br>
+
+You can pull in the command line using the command below.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git pull
+```
+
+That's all there is to it. You now have all of the tools that you need to save changes to a project repository, commit them to git, and push to and pull from GitHub. This is all that you need for working independently to safely back up and record all of the changes in a project that you are working on. A good work flow is to save the files that you work on frequently, and keep GitKraken (or a terminal) open in the background. Then, whenever you feel like you have made some important changes to your files (e.g., a new paragraph, some new code that works), commit the change and push it to GitHub. In addition to backing up the history if all of your project development, it is also nice to have a record of your progress over time. If you have any difficulty with these instructions, you can submit a question to the 'version_control' [issues](https://github.com/bradduthie/version_control/issues). Next, I will explain how to use branching in git.
+
+Step 4: Branches in git
+--------------------------------------------------------------------------------
+
 
 
 9. Additional resources
