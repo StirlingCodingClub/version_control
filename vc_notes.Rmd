@@ -385,12 +385,42 @@ After adding some commits to the branch 'restructure', I might be satisfied with
 
 <br>
 
-The top toolbar above shows that I am onthe branch 'restructure', so I want to click the down arrow on the 'restructure' pull down and switch to 'master'. Next, find the 'restructure' branch in the commit timeline (rectangle box to the left of the cyan cicles), right click, and select 'merge restructure into master'.  You should now see that the changes have been moved into 'master', and the branches 'master' and 'restructure' are now identical; you can continue to make commits on either branch, or, if there is no longer any need for the 'restructure' branch, it can be deleted by right clicking on it and selecting 'delete restructure'.
+The top toolbar above shows that I am on the branch 'restructure', so I want to click the down arrow on the 'restructure' pull down and switch to 'master'. Next, find the 'restructure' branch in the commit timeline (rectangle box to the left of the cyan cicles), right click, and select 'merge restructure into master'.  You should now see that the changes have been moved into 'master', and the branches 'master' and 'restructure' are now identical; you can continue to make commits on either branch, or, if there is no longer any need for the 'restructure' branch, it can be deleted by right clicking on it and selecting 'delete restructure' (note, there is nothing special about the branch named 'master'; you could equally well use it as a working branch and merge changes that you like into a branch named 'stable' or 'final', or something similar).
+
+In the command line, merges work using the `merge` command. After committing changes in a branch such as `restructure`, the first step in merging to master is to checkout back into the master branch.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git checkout master
+```
+
+Next, use the `merge` command and specify the branch you want to merge into master.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git merge restructure
+```
+
+Now, if you want to delete the 'restructure' branch in the command line, ues the following command.
+
+```{bash, eval = FALSE}
+git branch -d restructure
+```
+
+This explains everything about branching and merging, which is a very useful tool once you get used to it. It allows you to quickly start new experimental pathways in a project and make big changes without fear of disrupting anything. When you collaborate, if different people are working on different aspects of a project, each can work on a separate branch to be merged later. You can view a tree of branch history on GitHub in the 'insights' then 'networks' tab in a repository (e.g., [in the vegan R package](https://github.com/vegandevs/vegan/network)). If you're working with multiple collaborators who are all pulling from and pushing to GitHub, making commits, and creating and merging branches (or if you're doing all of these things yourself with multiple branches), things can start to look messy (for another example, see the [Rmarkdown repository](https://github.com/rstudio/rmarkdown/network) in Rstudio). In GitKraken, this is what it can look like with only two people and three branches.
 
 
-Then, right click on the branch that you want to merge into; there should be a pop up option that says, e.g, 'merge restrcuture into master'. Click on this. You should now see that the changes have been moved into 'master', and the branches 'master' and 'restructure' are now identical; you can continue to make commits on either branch, or, if there is no longer any need for the 'restructure' branch, it can be deleted by right clicking on it and selecting 'delete restructure'.
+![](images/GitKraken_multibranch.png)
+
+<br>
+
+Sometimes, merging between branches can create minor (but never disastrous!) issues that need to be resolved, which I will explain in the next step on dealing with merge conflicts (see below).
 
 
+Step 5: Dealing with merge conflicts
+--------------------------------------------------------------------------------
+
+Generally, git is very good about merging branches. It can recognise when new files have been added to each branch, and should preserve both of them during the merge; it can even recognise when different lines of the same text file have changed on each branch, and preserve these changes in a merged file. Sometimes, however, different branches will attempt to change the same lines of a file. When this happens, merging one branch into another will generate a 'merge conflict'. That is, git cannot determine what the merged line should be because each branch is giving it different information. The first thing to keep in mind if this happens is that [there is no reason to panic](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts). You haven't broken anything, and the worst thing that can happen, realistically, is that you have to either undo the merge attempt or revert to your most recent commits on each branch. But usually what happens instead is that git will helpfully show you the problem in the text file (by changing the text file to show you the conflict -- i.e., it writes what each branch wants the line to read as, so you can compare and decide) and you'll be able to figure out what you want the change to actually be. Cleverly, the way to deal with the merge conflict is therefore to change the text in the conflict file and *then* commit the change you've made (i.e., 'fixing' the merge conflict is resolved with a new commit, which then becomes part of your commit history just like any other commit). 
+
+I'll intentionally generate a merge conflict so you can see how this is dealt with in git in GitKraken and the command line.
 
 9. Additional resources
 ================================================================================
