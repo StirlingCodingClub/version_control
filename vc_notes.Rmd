@@ -353,6 +353,8 @@ The new branch 'restructure' starts off in the exact same place as the old 'mast
 ![](images/GitKraken_branch_2.png)
 <br>
 
+The above now shows two branches, with 'restructure' diverging from the main 'master' branch.
+
 For large projects (e.g., [an R package](https://github.com/ConFooBio/gmse/branches) with code, documentation, and a manuscript), I'll typically have a master branch of publication quality (`master`), a development branch where everything appears to be working (`dev`), a branch where revisions are taking place (`rev`), and several temporary branches for experimenting with new writing or code.
 
 
