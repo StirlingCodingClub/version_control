@@ -495,6 +495,14 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git checko
 brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git merge list_C
 ```
 
+You might be asked to write a commit message explaining the merge.
+
+![](images/CLI_merge_necessary.png)
+
+<br>
+
+Just write down a message (or leave the "Merge branch 'list_C'" as it is at the top) and hit CTRL + X. 
+
 
 9. Additional resources
 ================================================================================
