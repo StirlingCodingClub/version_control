@@ -332,7 +332,7 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git pull
 
 That's all there is to it. You now have all of the tools that you need to save changes to a project repository, commit them to git, and push to and pull from GitHub. This is all that you need for working independently to safely back up and record all of the changes in a project that you are working on. A good work flow is to save the files that you work on frequently, and keep GitKraken (or a terminal) open in the background. Then, whenever you feel like you have made some important changes to your files (e.g., a new paragraph, some new code that works), commit the change and push it to GitHub. In addition to backing up the history if all of your project development, it is also nice to have a record of your progress over time. If you have any difficulty with these instructions, you can submit a question to the 'version_control' [issues](https://github.com/bradduthie/version_control/issues). Next, I will explain how to use branching in git.
 
-Step 4: Branches in git
+Step 4: Branches in git {.branches}
 --------------------------------------------------------------------------------
 
 Creating and merging branches in git is an extremely useful tool in work flow. For large projects, I will typically reserve the 'master' branch as a sort of stable version in which I am confident that everything works as intended, and do all new work on a separate branch, only merging to the master branch when I am satisfied that what I have done is sufficient. Then, if I am unsatisfied, I can just abandon my working branch, or delete it. In GitKraken, branching is easy. Just click the 'Branch' button on the top tool bar.
@@ -433,7 +433,19 @@ Shopping list this week
 - Tomatoes
 ```
 
-I will now make two new branches named 'list_A' and 'list_B'. After creating these branches, each will be identical to the original branch in 'master', but I will edit them differently to generate a merge conflict.
+I will now make two new branches named 'list_A' and 'list_B'. After creating these branches, each will be identical to the original branch in 'master', but I will edit them differently to generate a merge conflict. First I will create the two branches in GitKraken as explained in the [above section](#branches). This is what it looks like in GitKraken.
+
+![](images/GitKraken_list_branches.png)
+
+<br>
+
+You can see that I am now on the 'list_B' branch from the upper left corner (grey sub-box, not the cyan one), and there are three branches at the very tip of the tree ('list_B', 'list_A', and 'master'). Next, I'm going to make two different changes to the list in branch 'list_A' versus 'list_B'. In the file 'list.md' on branch 'list_A', I will change 'Lettuce' in the list above to 'Spinach', while in the same 'list.md' file on branch 'list_B', I will change 'Lettuce' in the list above to 'Cucumber'. Hence, on two independent branches, I have changed the list in conflicting ways. I then switched back to the master branch to write this paragraph. Here's what GitKraken looks like now.
+
+![](images/GitKraken_two_list_branches.png)
+
+<br>
+
+You can see the two different branches coming off of the master branch, each with a commit message that explains the change. I will now attempt to merge list_A, then list_B back into the master branch.
 
 
 9. Additional resources
