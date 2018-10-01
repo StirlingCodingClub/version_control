@@ -1,7 +1,7 @@
 Shopping list this week
 =========================
 
-- Apples
+- Bananas
 - Porridge
 - Bread
 - Lettuce
