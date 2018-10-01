@@ -445,7 +445,7 @@ You can see that I am now on the 'list_B' branch from the upper left corner (gre
 
 <br>
 
-You can see the two different branches coming off of the master branch, each with a commit message that explains the change. I will now attempt to merge list_A, then list_B back into the master branch.
+You can see the two different branches coming off of the master branch, each with a commit message that explains the change. I will now attempt to merge list_A, then list_B back into the master branch. Merging the branch list_A produces no conflicts; the branch merges fine as normal. But when I then try to merge branch list_B into master, GitKraken warns me that there is a merge conflict. Again, it's worth emphasising that there is no need to panic here; nothing is going to be lost, and GitKraken immediately presents me with the option to Cancel the merge (note the big red button).
 
 
 9. Additional resources
