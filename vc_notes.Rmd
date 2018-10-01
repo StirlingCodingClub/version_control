@@ -488,6 +488,12 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add li
 brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m "Change Apples to Bananas"
 ```
 
+Now, I'll checkout the 'master' branch and merge list_C into it; as with the list_A branch above, this will not create a merge conflict.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git checkout master
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git merge list_C
+```
 
 
 9. Additional resources
