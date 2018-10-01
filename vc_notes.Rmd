@@ -420,7 +420,21 @@ Step 5: Dealing with merge conflicts
 
 Generally, git is very good about merging branches. It can recognise when new files have been added to each branch, and should preserve both of them during the merge; it can even recognise when different lines of the same text file have changed on each branch, and preserve these changes in a merged file. Sometimes, however, different branches will attempt to change the same lines of a file. When this happens, merging one branch into another will generate a 'merge conflict'. That is, git cannot determine what the merged line should be because each branch is giving it different information. The first thing to keep in mind if this happens is that [there is no reason to panic](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts). You haven't broken anything, and the worst thing that can happen, realistically, is that you have to either undo the merge attempt or revert to your most recent commits on each branch. But usually what happens instead is that git will helpfully show you the problem in the text file (by changing the text file to show you the conflict -- i.e., it writes what each branch wants the line to read as, so you can compare and decide) and you'll be able to figure out what you want the change to actually be. Cleverly, the way to deal with the merge conflict is therefore to change the text in the conflict file and *then* commit the change you've made (i.e., 'fixing' the merge conflict is resolved with a new commit, which then becomes part of your commit history just like any other commit). 
 
-I'll intentionally generate a merge conflict so you can see how this is dealt with in git in GitKraken and the command line.
+I'll intentionally generate a merge conflict so you can see how this is dealt with in git in GitKraken and the command line. First, I'll initialise a new file called `list.md` (this is an example of a [markdown file](https://en.wikipedia.org/wiki/Markdown), the same kind used for GitHub [README](https://github.com/StirlingCodingClub/studyGroup/blob/gh-pages/README.md) files), which will have the text below (see the file [here](https://github.com/bradduthie/version_control/blob/master/list.md)).
+
+```{md}
+Shopping list this week
+=========================
+
+- Apples
+- Porridge
+- Bread
+- Lettuce
+- Tomatoes
+```
+
+I will now make two new branches named 'list_A' and 'list_B'. After creating these branches, each will be identical to the original branch in 'master', but I will edit them differently to generate a merge conflict.
+
 
 9. Additional resources
 ================================================================================
