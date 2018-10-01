@@ -445,7 +445,49 @@ You can see that I am now on the 'list_B' branch from the upper left corner (gre
 
 <br>
 
-You can see the two different branches coming off of the master branch, each with a commit message that explains the change. I will now attempt to merge list_A, then list_B back into the master branch. Merging the branch list_A produces no conflicts; the branch merges fine as normal. But when I then try to merge branch list_B into master, GitKraken warns me that there is a merge conflict. Again, it's worth emphasising that there is no need to panic here; nothing is going to be lost, and GitKraken immediately presents me with the option to Cancel the merge (note the big red button).
+You can see the two different branches coming off of the master branch, each with a commit message that explains the change. I will now attempt to merge list_A, then list_B back into the master branch. Merging the branch list_A produces no conflicts; the branch merges fine as normal. But when I then try to merge branch list_B into master, GitKraken warns me that there is a merge conflict. Again, it's worth emphasising that there is no need to panic here; nothing is going to be lost, and GitKraken immediately presents me with the option to abort the merge (note the big red button below).
+
+![](images/GitKraken_Abort.png)
+
+<br>
+
+Aborting the merge will immediately stop it from happening if you realise that it's not what you wanted. Alternatively, however, you can also take a look at what is causing the conflict, then potentially make a decision about how to resolve it within GitKraken. If I click on the triangle with an exclamation mark on it to the left of the conflict file 'list.md', then the conflicting line(s) is shown; in my case, I know in advance this is a conflict because line seven has the word 'Spinach' on the branch 'master' (after 'list_A' merged with master), while line seven has the word 'Cucumber' on the list_B branch that we're attempting to merge into 'master'. This is shown in the GUI below after clicking the yellow triangle.
+
+![](images/GitKraken_resolve_merge.png)
+
+<br>
+
+The GitKraken environment therefore shows you, side-by-side, the branch you're merging into (left), the branch you're attempting to merge (right), and the resulting output that will happen when you're done (bottom; note that it currently has reverted back to the old commit with 'Lettus' on line 7). If you prefer one line over the other, you can simply click the left or the right (Spinach or Cucumber), and that choice will be what's placed on line 7 when the merge conflict is resolved (GitKraken also explains this in [a short YouTube video](https://www.youtube.com/watch?v=R1iWJNyRpQE)). The resolution of the merge conflict -- i.e., the changes you make to the file to fix the conflict -- is *itself* a commit, and is treated just like any other commit that you can come back to later. Here's what that looks like in GitKraken, with the 'list_B' branch successfully merged after the conflict has been resolved.
+
+![](images/GitKraken_fixed_merge.png)
+
+<br>
+
+That's it! Note that merge conflicts might also occur when collaborating with others who are working in the same repository and on the same files. While git is generally good about figuring out where everything should go, if the same line is changed in a different way on a file, a merge conflict will inevitably arise.
+
+**If you don't intend to use the command line, you can skip ahead.** But here I'll show what a merge conflict looks like in the command line interface. I'll create the new branches 'list_C' and 'list_D'.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git branch list_C
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git branch list_D
+```
+
+I'll then checkout 'list_C' and change the word 'Apples' on line 4 of 'list.md' to 'Pears', then add the new file and commit.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git checkout list_C
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add list.md
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m "Change Apples to Pears"
+```
+
+Next, I'll checkout 'list_D' and change the word 'Apples' on line 4 of 'list.md' to 'Bananas', then add the new file and commit.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git checkout list_D
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git add list.md
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git commit -m "Change Apples to Bananas"
+```
+
 
 
 9. Additional resources
