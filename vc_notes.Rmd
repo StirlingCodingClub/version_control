@@ -501,7 +501,49 @@ You might be asked to write a commit message explaining the merge.
 
 <br>
 
-Just write down a message (or leave the "Merge branch 'list_C'" as it is at the top) and hit CTRL + X. 
+Just write down a message (or leave the "Merge branch 'list_C'" as it is at the top) and hit CTRL + X. I will now try to merge the branch list_D into branch master. Rather than the nice interface, the command line gives us a slightly less intuitive result.
+
+![](images/CLI_merge_conflict.png)
+
+<br>
+
+What the command line is telling me here is there is a merge conflict in list.md, and that I need to go fix it and commit the new result. If I decide that I actually want to abort the merge, I can do so using the command below.
+
+```{bash, eval = FALSE}
+brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git reset --merge
+```
+
+But if I want to actually resolve the conflict, I need to go into the file with the conflict. The way that git handles merge conflicts behind the scenes is to bracket off what each branch things a line should be in the file itself (GitKraken just interprets this in a more helpful way in the GUI). So the list.md file with a merge conflict now looks like the below.
+
+```{md}
+Shopping list this week
+=========================
+
+<<<<<<< HEAD
+- Pears
+=======
+- Bananas
+>>>>>>> list_D
+- Porridge
+- Bread
+- Lettuce
+- Tomatoes
+```
+
+Recall that I had changed that top list item from "Apples" to "Pears" on one branch and "Bananas" on another branch, then merged the "Pears" change into 'master', and tried to merge the "Bananas" change into the same line thereafter, generating the conflict. What git is showing me with the `<<<<<<<` and `>>>>>>>` is where the conflict is located, separated by a `=======`. The `<<<<<<< HEAD` shows what the branch being merged into (in this case, 'master' -- and what used to be list_C) thinks the line should be. The `>>>>>>> list_D` shows what the merging branch thinks the line should be. To resolve the conflict, I simply decide what **I** want the line to be; I will change it back to Apples, manually editing the file to look like the below.
+
+```{md}
+Shopping list this week
+=========================
+
+- Apples
+- Porridge
+- Bread
+- Lettuce
+- Tomatoes
+```
+
+To resolve the commit, I simply save the change I just made to list.md, then add and commit as normal.
 
 
 9. Additional resources
