@@ -69,14 +69,31 @@ In [GitHub](http://github.com), the process of creating, making changes to, and 
 
 This will take you to a new screen where you can start writing directly in your browser, and you can save the file as whatever name you want. When you're finished, you can scroll to the bottom of the page to make a commit.
 
-![](images/GitHub_commit.png)
+![**In general, it is a good idea to try to come up with an informative commit message. Traditionally, git commit messages are written in present tense.](images/GitHub_commit.png)
 
 <br>
 
 Unlike using tools outside of your browser such as GitKraken or the command line, there is no need to [push to or pull](#step4) anything from GitHub because you're making changes *directly to GitHub*, so the edits made to files are automatically saved into GitHub. **It is important to note, however, that changes you make on GitHub need to be pulled** (i.e., downloaded) onto your local computer *before* you start making changes locally -- e.g., in Rstudio. They won't appear automatically.
 
-With no need to push or pull in GitHub itself, we can move to using branches in GitHub.
+With no need to push or pull in GitHub itself, we can move to using branches in GitHub. You can create a branch whenever you edit a file by selecting the 'Create a **new branch** for this commit and start a pull request' radio button below your commit message. 
 
+![](images/GitHub_create_new_branch.png)
+
+<br>
+
+Creating a new branch will immediately take you to the pull request screen below. This will send a request to merge the change that you've just made with the master branch (i.e., a '[pull request](https://github.com/StirlingCodingClub/version_control/pull/1)') -- it let's you know that the branches can be merged without any [merge conflict](#step6), and shows the change that you made at the bottom of the secreen (removing 'Tomatoes' and adding 'Avacodo'). 
+
+![](images/GitHub_branching.png)
+
+<br>
+
+There is no need to create a pull request if you do not want to -- the change that you have made has already created a new branch. You now have two different versions of the repository, and can switch between them. To switch between branches in GitHub, go to [the repository](https://github.com/StirlingCodingClub/version_control) and find the pull down that says 'Branch:'. You should be able to switch to the branch 'avocado' to see what the repository looks like on this branch. 
+
+![**An example of switching to a different branch**](images/GitHub_branch_2.png)
+
+<br>
+
+To merge the 'avacado' branch into the base 'master' branch, you would go into the [pull request](https://github.com/StirlingCodingClub/version_control/pull/1) and click the green button 'Merge pull request'. I will explain merging more in the next section explaining [branching](#branches) and [merge conflicts](#step6).
 
 <a name="GK_CLI">Using GitKraken & Command Line Interface (CLI)</a>
 ================================================================================
