@@ -93,7 +93,7 @@ There is no need to create a pull request if you do not want to -- the change th
 
 <br>
 
-To merge the 'avacado' branch into the base 'master' branch, you would go into the [pull request](https://github.com/StirlingCodingClub/version_control/pull/1) and click the green button 'Merge pull request'. I will explain merging more in the next section explaining [branching](#branches) and [merge conflicts](#step6).
+To merge the 'avacado' branch into the base 'master' branch, you would go into the [pull request](https://github.com/StirlingCodingClub/version_control/pull/1) and click the green button 'Merge pull request'. I will explain merging more in the next section explaining [branching](#branches) and [merge conflicts](#step6). In the mean time, note that we now have two different versions (branches) of the same repository, in which the file 'list.md' differs. In the master branch, the last item on our list is 'Tomatoes', whereas in the avocado branch, the last item on our list is 'Avocado'.
 
 <a name="GK_CLI">Using GitKraken & Command Line Interface (CLI)</a>
 ================================================================================
