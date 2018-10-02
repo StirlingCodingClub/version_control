@@ -119,8 +119,6 @@ h1, h2, h3, h4, h5, h6, h7, h8, p {
 <br>
 <div class="columns-2">
 
-![](images/git.png)
-
 - Free and open-source
 - Separate from [GitHub](http://github.com)
 - Works across platforms
@@ -128,6 +126,10 @@ h1, h2, h3, h4, h5, h6, h7, h8, p {
     - Linux
     - Mac
 - Invented by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds)
+
+<br>
+
+![](images/git.png)
 
 </div>
 
