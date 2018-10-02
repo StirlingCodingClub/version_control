@@ -5,52 +5,60 @@ date: "26 September 2018"
 output: html_document
 ---
 
-
-<!---
-
-1. Initialise a new repository in StirlingCodingClub for how to understand and use git
-2. Write up an Rmarkdown document introducing version control and how to get started with it in the command line and with GitKraken (would try to do by this WED).
-3. As part of the Rmarkdown document, include a diverse list of outside links where people can go to get more help.
-4. Post the slides early so that people know what to expect, give the opportunity for people to ask questions before arriving.
-5. On 3 OCT, go through the slides, then demonstrate how to use git on the command line and GitKraken, allowing others to follow along.
-6. Leave the repository up and address questions as issues when they arise.
-
---->
-
-Introduction
+Contents
 ================================================================================
 
-- [git](https://git-scm.com/): A software for version control
-- [GitHub](http://github.com): A website that enables collaboration and use of git
-- [repository (repo)](): A folder that is using git
+********************************************************************************
 
-1. What is version control? {.what_is_vc}
+**Note: Please think of this document as a living document, which you are free to improve (like a [wiki](https://en.wikipedia.org/wiki/Wiki)) with minor edits, new sections that others might find useful (e.g., using git directly in Rstudio), or [additional resources](#whatelse) that you find that you think others might also find useful. After reading through this, you should have a working understanding (and be able to explain to others) of what version control is and why it is useful. You should also be able to start using version control in your own work through a combination of [GitHub](http://github.com) and either [GitKraken](http://gitkraken.com) or the command line interface.**
+
+********************************************************************************
+
+- [Introduction: What is verison control?](#what_is_vc)
+- [Things to do before getting started](#todo)
+- [How to use git in GitHub](#how_use_gh)
+- [Using GitKraken & Command Line Interface (CLI)](#GK_CLI)
+
+    1. [Initialising a git repository](#step1)
+    2. [Linking your repository with GitHub](#ghlink)
+    3. [Add and commit files](step3)
+    4. [Pushing and pulling with GitHub](step4)
+    5. [Branches in git](#branches)
+    6. [Dealing with merge conflicts](step6)
+
+- [Additional resources](#whatelse)
+
+********************************************************************************
+
+1. Introduction: What is verison control? {.what_is_vc}
 ================================================================================
 
-[Version control](https://en.wikipedia.org/wiki/Version_control) is any system that records changes made within a repository over time so that different versions of files can be managed and, if necessary, recovered.
+[Version control](https://en.wikipedia.org/wiki/Version_control) is any system that records changes made within a set of files over time so that different versions of files can be managed and, if necessary, recovered. **Put more intuitively**, version control is a way of taking a snapshot (called a 'commit') in time of all the files in one of your folders (called 'repositories'); as you make changes to the files within your folder, you can always come back to previous snapshots that you've taken (if, e.g., you make a change that you regret, or need information from a previous point in time). You can even have multiple different versions of the same folder existing in parallele (called branches). You can think of it as an extra step on top of 'saving' a file -- a step that solidifies a key point in time for your work, records how it changed from previous and subsequent points in time, and records who made the change, when, and why.
+
+Version control is indispensable for large coding projects with multiple developers collaborating on the same code, but it's also a very useful tool for the workflow of scientific research. Using version control can allow you to better manage data files, analysis files (e.g., R code), manuscript files, and more in a way that keep things clean and removes the anxiety of losing track of which file is the 'right' one. 
+
+Version control is also an excellent tool for doing open science. By keeping a record of how your data, analysis, and manuscripts change over time, the process of doing science becomes more transparent. By uploading your progress to GitHub, you can make the whole process of doing science accessible to others, and have evidence of priority and accuracy in your conclusions (you can also keep repositories private, though this [costs a small amount](https://github.com/pricing) unless [you are a student](https://help.github.com/articles/applying-for-a-student-developer-pack/)). 
+
+<br>
+
+![*An example of the timeline of commits for a recent project. Bold titles on top show more recent changes committed to the repository; the bold messages are written at the time of committing, and make it easier to see important changes added over time. In GitHub, you can click on these bold titles to see what changes were made since the last commit; from here, you can also see the whole repository as it was during the time of commit (you can also do this by clickling on the `< >` buttons on the right).*](images/VC_intro.png)
+
+<br> 
+
+There are many different [types of version control](https://en.wikipedia.org/wiki/List_of_version_control_software) available. Here I am going to focus only on [git](https://git-scm.com/) version control software, which has the advantage of being free, open source, available on all platforms (Linux, Mac, and Windows), and the most popular software among research scientists. The software was invented by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the same developer who created the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel).
+
+In this introduction to using version control, I am going to focus heavily on using two software tools that work with [git](https://git-scm.com/), [GitHub](http://github.com) and [GitKraken](http://gitkraken.com). Like git, both [GitHub](http://github.com) and [GitKraken](http://gitkraken.com) are free for basic use, though more advanced options can come with a small cost. These two tools make using git much easier, especially if you don't like the idea of working within the command line. [GitHub](http://github.com) offers a massive online platform where you can store your git repositories, discover and download the repositories, and collaborate with other GitHub users (e.g., in organisations such as the [Stirling Coding Club](https://github.com/StirlingCodingClub)). [GitKraken](http://gitkraken.com) provides a nice graphical user interface for using git, visualising your repository, and linking to GitHub. As you become proficient with git, you might find yourself start thinking less in terms of individual files and file versions, and more in terms of commits and branches with inter-related files.
+
+First, I am going to briefly talk about how to use git entirely *within* GitHub on your browser. This requires fewer steps than using GitKraken, but it can only get you so far because you cannot work with the changes that you make directly on GitHub. For example, if you edit an R file in GitHub, you would have no way to run the code without pulling the file from GitHub to your local repository.
 
 
-2. Why use version control? {.why_is_vc}
+Things to do before getting started {.todo}
 ================================================================================
 
-- Keep track of files that are edited by multiple collaborators simultaneously
-- Easy way to undo changes to any point in the past
-- Back up the entire history of a project
-
-3. What is git? {.what_is_git}
-================================================================================
-
-- Open-source version control developed by Linus Torvalds
-- Not an acronym for anything
-- Not the same thing as [GitHub](http://github.com), which is a repository for git
+If you are just starting out with git, I recommend [signing up with a GitHub account](github.com/join), then [downloading GitKraken](https://www.gitkraken.com/download). You can do everything that I explain below with only these two tools. For those who prefer to use the command line interface, I have included instructions for how to do this below too. Learning to use git in the command line is probably useful if you already use the command line in your normal work flow (or if you are interested in doing so!), but if it's not something that you work with already, learning it here is probably more trouble than it's worth.
 
 
-4. How does version control work? {.how_does_vc}
-================================================================================
-
-
-
-5. How to use git in GitHub {.how_use_gh}
+How to use git in GitHub {.how_use_gh}
 ================================================================================
 
 In [GitHub](http://github.com), the process of creating, making changes to, and comitting files is fairly straightforward, and it's possible to create and manage a repository entirely within GitHub in the browser. The downside to this approach is that you cannot actually run code in GitHub, as you can in Rstudio or some other program. You cannot create a DOCX or PDF file for a manuscript, or run your R analysis, in GitHub. Hence using git in GitHub should probably be thought about as an occasional tool to use for editing when away from your office computer, or just need a very quick fix to something to pull from GitHub later. To create a new file, simply go to your GitHub repository and click the button "Create new file".
@@ -70,12 +78,12 @@ Unlike using tools outside of your browser such as GitKraken or the command line
 With no need to push or pull in GitHub itself, we can move to using branches in GitHub.
 
 
-6. Using GitKraken & Command Line Interface (CLI)
+Using GitKraken & Command Line Interface (CLI) {.GK_CLI}
 ================================================================================
 
 This set of instructions will get you started working with git and GitHub. Throughout this guide, I will explain how to use the basic functions of git and link git with GitHub using both the free software [GitKraken](http://gitkraken.com) and the command line interface. **You do not need to know both GitKraken and the command line to use git**. One method for using git is sufficient, and unless you are already familiar with the command line, or wish to make it a part of your work flow, then I recommend using GitKraken to start off with git (i.e., feel free to ignore all of the command line instructions that follow). Note that GitKraken can run alongside whatever text editor (e.g., Rstudio) you're using to actually edit your text files, but you don't typically make edits from within GitKraken itself -- GitKraken is more like a file manager in this way; you can keep it open to stage, commit, push, pull, etc., while working on files in your git repository.
 
-Step 1: Initialising a git repository {.step1}
+1. Initialising a git repository {.step1}
 --------------------------------------------------------------------------------
 
 Initialise a git repository using [GitKraken](http://gitkraken.com) by specifying the folder on your computer where you want the repository to be initialised by selecting the 'Init' tab (far left) and the 'Local' tab (top left) within GitKraken. If you cannot figure out how to get the the image below, go to the upper left folder icon within GitKraken.
@@ -83,6 +91,8 @@ Initialise a git repository using [GitKraken](http://gitkraken.com) by specifyin
 ![The GitKraken interface](images/GitKraken_init.png)
 
 <br>
+
+**Note that you can get some help with GitKraken's [interface cheetsheet]((https://www.gitkraken.com/downloads/gitKraken-cheat-sheet-28sept2017.pdf)**
 
 In the command line, this is done by first going to the folder where you want to initialise the repository.
 
@@ -124,7 +134,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 The command `git log` returns a list of previous git commits (equivalent to the cyan circles in the GitKraken interface shown above). I will explain this more later, but first let's link the newly created git repository with GitHub.
 
 
-Step 2: Linking your repository with GitHub {.ghlink}
+2. Linking your repository with GitHub {.ghlink}
 --------------------------------------------------------------------------------
 
 To link GitKraken with your GitHub account, first go to GitHub and login. Next find and click the button that looks like the one below.
@@ -179,7 +189,7 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git push -
 
 You should now have a git repository up and running on your local machine, and a linked version on GitHub. Next I will explain how to add and commit changes to files.
 
-Step 3: Add and commit files  {.step3}
+3. Add and commit files  {.step3}
 --------------------------------------------------------------------------------
 
 Now that you have a repository ready to start tracking your changes, you can start making commits. The flow of this process as you work within your repository is typically (1) saving files, (2) adding (or 'staging') files , (3) committing files, and (4) pushing files too GitHub. Rather than saving the most recent changes that you've made to the files in your repository, the idea here is to save a snapshot of the whole repository using 'commit'. You can then always return to this commit to view what your repository looked like at a previous time. 
@@ -265,7 +275,7 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git diff -
 
 You are now able to stage and commit files in GitKraken and the command line. This is most of what you'll do with version control, and all that you need to get started. Next, I'll show you how to push your commits to GitHub, and pull changes from GitHub to your local branch. Once you're able to do this, you will have all of the necessary skills for using git and GitHub effectively in your own projects; after that, I'll explain some of the features that make git such an effective tool for collaboration.
 
-Step 4: Pushing and pulling with GitHub  {.step4}
+4. Pushing and pulling with GitHub  {.step4}
 --------------------------------------------------------------------------------
 
 Assuming that you have [linked your local repository with GitHub](#ghlink), uploading the changes that you commit to GitHub (pushing), and downloading changes on GitHub and incorporating them into your local repository (pulling) is easy with GitKraken. You should see a top bar in GitKraken that looks like the below.
@@ -348,7 +358,7 @@ brad@duthie-pc:~/Dropbox/projects/StirlingCodingClub/version_control$ git pull
 
 That's all there is to it. You now have all of the tools that you need to save changes to a project repository, commit them to git, and push to and pull from GitHub. This is all that you need for working independently to safely back up and record all of the changes in a project that you are working on. A good work flow is to save the files that you work on frequently, and keep GitKraken (or a terminal) open in the background. Then, whenever you feel like you have made some important changes to your files (e.g., a new paragraph, some new code that works), commit the change and push it to GitHub. In addition to backing up the history if all of your project development, it is also nice to have a record of your progress over time. If you have any difficulty with these instructions, you can submit a question to the 'version_control' [issues](https://github.com/bradduthie/version_control/issues). Next, I will explain how to use branching in git.
 
-Step 5: Branches in git {.branches}
+5. Branches in git {.branches}
 --------------------------------------------------------------------------------
 
 Creating and merging branches in git is an extremely useful tool in work flow. For large projects, I will typically reserve the 'master' branch as a sort of stable version in which I am confident that everything works as intended, and do all new work on a separate branch, only merging to the master branch when I am satisfied that what I have done is sufficient. Then, if I am unsatisfied, I can just abandon my working branch, or delete it. In GitKraken, branching is easy. Just click the 'Branch' button on the top tool bar.
@@ -431,7 +441,7 @@ This explains everything about branching and merging, which is a very useful too
 Sometimes, merging between branches can create minor (but never disastrous!) issues that need to be resolved, which I will explain in the next step on dealing with merge conflicts (see below).
 
 
-Step 6: Dealing with merge conflicts  {.step6}
+6. Dealing with merge conflicts  {.step6}
 --------------------------------------------------------------------------------
 
 Generally, git is very good about merging branches. It can recognise when new files have been added to each branch, and should preserve both of them during the merge; it can even recognise when different lines of the same text file have changed on each branch, and preserve these changes in a merged file. Sometimes, however, different branches will attempt to change the same lines of a file. When this happens, merging one branch into another will generate a 'merge conflict'. That is, git cannot determine what the merged line should be because each branch is giving it different information. The first thing to keep in mind if this happens is that [there is no reason to panic](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts). You haven't broken anything, and the worst thing that can happen, realistically, is that you have to either undo the merge attempt or revert to your most recent commits on each branch. But usually what happens instead is that git will helpfully show you the problem in the text file (by changing the text file to show you the conflict -- i.e., it writes what each branch wants the line to read as, so you can compare and decide) and you'll be able to figure out what you want the change to actually be. Cleverly, the way to deal with the merge conflict is therefore to change the text in the conflict file and *then* commit the change you've made (i.e., 'fixing' the merge conflict is resolved with a new commit, which then becomes part of your commit history just like any other commit). 
@@ -562,8 +572,13 @@ Shopping list this week
 To resolve the commit, I simply save the change I just made to list.md, then add and commit as normal.
 
 
-9. Additional resources
+Additional resources {.whatelse}
 ================================================================================
+
+**Cheat sheets**
+
+- [Cheat sheet for GitKraken with GitHub](https://www.gitkraken.com/downloads/gitkraken-for-github-cheat-sheet-28sept2017.pdf)
+- [Cheat sheet for GitKraken Interface](https://www.gitkraken.com/downloads/gitKraken-cheat-sheet-28sept2017.pdf)
 
 **Introductions to version control (guides)**
 
