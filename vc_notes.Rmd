@@ -30,7 +30,7 @@ Contents
 
 ********************************************************************************
 
-<a name="what_is_vc">Introduction: What is verison control?</a>
+<a name="what_is_vc">Introduction: What is version control?</a>
 ================================================================================
 
 [Version control](https://en.wikipedia.org/wiki/Version_control) is any system that records changes made within a set of files over time so that different versions of files can be managed and, if necessary, recovered. **Put more intuitively**, version control is a way of taking a snapshot in time (called a 'commit') of all the files in one of your folders (called 'repositories'); as you make changes to the files within your folder, you can always come back to previous snapshots that you've taken (if, e.g., you make a change that you regret, or need information from a previous point in time). You can even have multiple different versions of the same folder existing in parallel (called branches). You can think of it as an extra step on top of 'saving' a file -- a step that solidifies a key point in time for your work, records how it changed from previous and subsequent points in time, and records who made the change, when, and why.
