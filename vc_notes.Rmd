@@ -10,11 +10,11 @@ Contents
 
 ********************************************************************************
 
-**Note: Please think of this document as a living document, which you are free to improve (like a [wiki](https://en.wikipedia.org/wiki/Wiki)) with minor edits, new sections that others might find useful (e.g., using git directly in Rstudio), or [additional resources](#whatelse) that you find that you think others might also find useful. After reading through this, you should have a working understanding (and be able to explain to others) of what version control is and why it is useful. You should also be able to start using version control in your own work through a combination of [GitHub](http://github.com) and either [GitKraken](http://gitkraken.com) or the command line interface.**
+**Note: Please think of this document as a living document, which you are free to improve (like a [wiki](https://en.wikipedia.org/wiki/Wiki)) with minor edits, new sections that others might find useful (e.g., using git directly in Rstudio), or [additional resources](#whatelse) that you find that you think others might also find useful. After reading through this, you should have a working understanding of what version control is and why it is useful. You should also be able to start using version control in your own work through a combination of [GitHub](http://github.com) and either [GitKraken](http://gitkraken.com) or the command line interface.**
 
 ********************************************************************************
 
-- [Introduction: What is verison control?](#what_is_vc)
+- [Introduction: What is version control?](#what_is_vc)
 - [Things to do before getting started](#todo)
 - [How to use git in GitHub](#how_use_gh)
 - [Using GitKraken & Command Line Interface (CLI)](#GK_CLI)
