@@ -69,7 +69,7 @@ In [GitHub](http://github.com), the process of creating, making changes to, and 
 
 This will take you to a new screen where you can start writing directly in your browser, and you can save the file as whatever name you want. When you're finished, you can scroll to the bottom of the page to make a commit.
 
-![**In general, it is a good idea to try to come up with an informative commit message. Traditionally, git commit messages are written in present tense.](images/GitHub_commit.png)
+![*In general, it is a good idea to try to come up with an informative commit message. Traditionally, git commit messages are written in present tense.*](images/GitHub_commit.png)
 
 <br>
 
