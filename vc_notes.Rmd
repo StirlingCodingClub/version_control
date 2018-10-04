@@ -89,7 +89,7 @@ Creating a new branch will immediately take you to the pull request screen below
 
 There is no need to create a pull request if you do not want to -- the change that you have made has already created a new branch. You now have two different versions of the repository, and can switch between them. To switch between branches in GitHub, go to [the repository](https://github.com/StirlingCodingClub/version_control) and find the pull down that says 'Branch:'. You should be able to switch to the branch 'avocado' to see what the repository looks like on this branch. 
 
-![**An example of switching to a different branch**](images/GitHub_branch_2.png)
+![*An example of switching to a different branch*](images/GitHub_branch_2.png)
 
 <br>
 
@@ -105,11 +105,11 @@ This set of instructions will get you started working with git and GitHub. Throu
 
 Initialise a git repository using [GitKraken](http://gitkraken.com) by specifying the folder on your computer where you want the repository to be initialised by selecting the 'Init' tab (far left) and the 'Local' tab (top left) within GitKraken. If you cannot figure out how to get the the image below, go to the upper left folder icon within GitKraken.
 
-![The GitKraken interface](images/GitKraken_init.png)
+![](images/GitKraken_init.png)
 
 <br>
 
-**Note that you can get some help with GitKraken's [interface cheetsheet]((https://www.gitkraken.com/downloads/gitKraken-cheat-sheet-28sept2017.pdf)**
+**Note that you can get some help with GitKraken's [interface cheetsheet](https://www.gitkraken.com/downloads/gitKraken-cheat-sheet-28sept2017.pdf)**
 
 In the command line, this is done by first going to the folder where you want to initialise the repository.
 
@@ -126,7 +126,7 @@ Initialised empty Git repository in /home/brad/Dropbox/projects/StirlingCodingCl
 
 You now have a local repository initialised and are ready to start using git. Note that the repository is not yet linked with GitHub, but you can still view the repository within [GitKraken](http://gitkraken.com). The image below shows the version_control repository during an early stage of development (but several commits after initialisation). Each of the four cyan circles shows an individual commit with a message about what the commit is doing. I can go back to see what the directory looked like in a previous commit by clicking one of these circles.
 
-![The GitKraken interface](images/GitKraken_1.png)
+![*The GitKraken interface*](images/GitKraken_1.png)
 
 <br>
 
