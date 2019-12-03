@@ -1,0 +1,144 @@
+---
+title: "Using RStudio Integrated Git Version Control"
+author: John Wilson
+date: 12 October 2018
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RStudio Git Integration
+
+RStudio makes it possible to use Git version control through the use of the command line, and supports the most common basic functions with a simple graphical interface
+To use the command line two options are available. An external shell (below left) can be activated by clicking `Tools > Shell...`, or by using the in-built RStudio Terminal pane (below right), located next to the Console pane.
+Using the command line is the only way to access the full git functionality.
+Either should work the same, but I have found that the RStudio Terminal to be a bit sticky, and most of the time, I am able to do get by just using the git pane buttons.
+The graphical interface is accesed through the git pane.
+
+![][bash_shell]
+
+## The git pane
+
+When a new project, with git version control enabled is initialised in RStudio, the working directory will appear as shown below in the `Files` tab.
+The left pane shows the files present in the current `working directory`, which is currently the same as the `project root directory`.
+Here, I have begun a git enabled project, and immediately created three R scripts.
+
+![][new_project]
+
+The pane on the right is the git integration pane.
+At the moment, it shows the same files as the Files pane, but this will change as the changes are made to the files in the repo.
+The buttons at the top of the pane are, from left to right:
+
++ __Diff__:
+  + Compare changes
++ __Commit__:
+  + Add changes to a local repo
++ __Pull__ (Blue down-arrow):
+  + Make a local repo match a remote repo
++ __Push__ (Green up-arrow):
+  + Add changes in a local repo to a remote repo
++ __History__ (Clock icon):
+  + View the history of commits
++ __Other__ (Gear icon):
+  + Undoes some changes - `Revert`
+  + Opens `.gitignore` for editing
+  + Opens a shell terminal
++ __New branch__ (Purple squares icon):
+  + Creates a new branch
++ __Branches available__:
+  + Lists currently existing branches
+  + Offers a way to switch between branches
++ __Refresh__:
+  + Refreshes the view if it wasn't updated automatically after changes
+
+## Git status
+
+The git pane lists all the files that git has detected and describes their git status using a column that can contain two icons.
+If an icon is located on the right of the column, it indicates the current status is unstaged.
+An icon on the left indicates the change has been staged.
+The status view reflects the display from using the git command line `git status - s`
+
++ <span style = 'color:gold'>__??__</span>: Untracked
+  + Will not be added to the repository in the next commit
++ <span style = 'color:green'>___A__</span>: Added
+  + Added to the index (staging area) and will be added to the repo in the next commit
++ <span style = 'color:blue'>___M__</span>: Modified
+  + Indicates an already committed file has been modified and the modifications have been staged ready for commiting
++ <span style = 'color:blue'>__MM__</span>: Modified again
+  + A new _unstaged_ modification has occurred in file with a previouly staged, but not commited, modification
++ <span style = 'color:red'>___D__</span>: Deleted
+  + A file has been deleted - the deletion also has to be commited otherwise it will return next time you pull from the remote
++ <span style = 'color:purple'>___R__</span>: Renamed
+  + A file has been renamed or _moved_ - as with deleted files, this has to be commited
+
+## Adding and commiting files
+
+Git works by taking a snapshot of files and storing them as commits to a repository.
+At the command line this done by using the `add` command followed by the names of the files to be added to the staging area (aka _index_ in git speak), eg: `git add .gitignore RStudio-git.Rproj`
+Adding the files to the index only tells git you are interested in adding these files to a repo - it doesn't actually add them to the repo though.
+To add them to a repo you use the `commit -m` command, where the `-m` denotes message, and the actual message is added afterwards, eg: `git commit -m 'Commit message`
+Ie you first __add__ files to the index, then __commit__ those files to the repo.
+
+### Adding
+
+```bash
+git add .gitignore Rstudio-git.Rproj
+```
+
+Using the git pane, you just click the checkbox for the files you want to add to the staging area.
+
+![][git_add]
+
+### Commiting
+
+To commit using the command line type
+
+```bash
+git commit -m 'A meaningful commit message'
+```
+
+The git pane alternative is to click the commit button, and when pressed you are presented a window as shown below.
+The top left pane shows the files in the working directory and their git status.
+The top right is where you should type your commit message.
+The bottom pane allows you to review the changes that have occured to a file since it was last commited.
+
+![][git_commit]
+
+## Modifying files
+
+After a while you will have created more file / scripts that you also want to add to the repo.
+These files will undergo many changes as your project progresses, of which you will likely want to keep a record.
+The image below shows three scripts that have been previously `commit`ed to a repo.
+Since they were commited 4 changes have occured.
+
+1. Script_1.R has been modified and added to the staging area
+2. Script_2.R was modified, added to the staging area, and then modified again (2 changes)
+3. Script_3.R was modified but the changes have not been staged.
+
+![][modified_status]
+
+It is important to know that only the changes that have been staged will be commited to the repo.
+Ie, changes to Script_3.R will not be commited, nor will the second change to Script_2.R.
+None of the changes will be lost, however.
+After commiting, Scripts 2 and 3 will remain in their current state, so you can continue working on them then add and commit the new changes when you are ready.
+
+![][commiting_changes]
+
+Note that in the bottom pane, lines that were added since the file was staged are highlighted in green, and lines that have been removed are highlighted in red.
+Also of interest are the options at the top of the bottom pane, in particular the grey bar has two buttons, "stage chunk" and "Discard chunk".
+These buttons make it possible to review any changes before staging or commiting.
+
+## Deleting and renaming files
+
+Even file deletions must be staged.
+Below Script_1.R was deleted, and staged.
+Script_2.R was renamed as Script_4 - but this change has not been staged.
+Only when both the deletion and the newly named file are added will this be picked up as a rename, as shown by Script_3.R which was renamed Script_5.R.
+
+![][delete_and_rename]
+

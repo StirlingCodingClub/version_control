@@ -1,9 +1,10 @@
 ---
 title: "Version control for reproducible science"
 author: "Brad Duthie"
-date: "2 October 2018"
+date: "4 December 2019"
 output:
-  ioslides_presentation: 
+  beamer_presentation: default
+  ioslides_presentation:
     logo: images/SCC_Logo_slide_sm.png
 ---
 
