@@ -142,15 +142,3 @@ Only when both the deletion and the newly named file are added will this be pick
 
 ![][delete_and_rename]
 
-
-******************************
-
-[new_project]: figs/new_project.png
-[ignore_Proj]: figs/ignore_Proj.png
-[git_tab_controls]: figs/git_tab_controls.png
-[bash_shell]: figs/bash_shell.png
-[git_add]: figs/git_add.png
-[git_commit]: figs/git_commit.png
-[modified_status]: figs/modified_status.png
-[commiting_changes]: figs/commiting_changes.png
-[delete_and_rename]: figs/delete_and_rename.png
