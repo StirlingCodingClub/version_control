@@ -1,7 +1,7 @@
 ---
 title: "Version control for reproducible science"
 author: "Brad Duthie"
-date: "26 September 2018"
+date: "17 November 2022"
 output: html_document
 ---
 
@@ -10,7 +10,7 @@ Contents
 
 ********************************************************************************
 
-**Note: Please think of this document as a living document, which you are free to improve (like a [wiki](https://en.wikipedia.org/wiki/Wiki)) with minor edits, new sections that others might find useful (e.g., using git directly in Rstudio), or [additional resources](#whatelse) that you find that you think others might also find useful. After reading through this, you should have a working understanding of what version control is and why it is useful. You should also be able to start using version control in your own work through a combination of [GitHub](http://github.com) and either [GitKraken](http://gitkraken.com) or the command line interface.**
+**After reading through this, you should have a working understanding of what version control is and why it is useful. You should also be able to start using version control in your own work through a combination of [GitHub](http://github.com) and either [GitKraken](http://gitkraken.com) or the command line interface.**
 
 ********************************************************************************
 
