@@ -1,0 +1,176 @@
+---
+title: "An introduction version control"
+subtitle: "https://stirlingcodingclub.github.io/version_control.pdf"
+author: "Brad Duthie (alexander.duthie@stir.ac.uk)"
+date: "13 January 2023"
+output:
+  beamer_presentation: default
+header-includes:
+- \usepackage{hyperref}
+colorlinks: true
+linkcolor: blue
+urlcolor: blue
+---
+
+
+# Using version control
+
+\Large
+
+\begin{itemize}
+\setlength\itemsep{0.8em}
+\item Understand what version control is and how it can be integrated into your work flow \pause
+\item Focus on practical skills for research
+\begin{itemize}
+\item Learn and reinforce knowledge on how to use \textbf{key skills} effectively
+\item Focus on \href{https://github.com}{GitHub} and \href{https://desktop.github.com/}{GitHub Desktop} software \pause
+\end{itemize}
+\item Hands-on practice setting up and using version control in your own work with \href{https://bradduthie.github.io/notes/vc_notes.html}{accompanying notes for guidance}
+\end{itemize}
+
+\vspace{2mm}
+\hrule
+\vspace{2mm}
+
+https://bradduthie.github.io/notes/vc_notes.html
+
+
+# Rough outline of version control
+
+\Large
+
+\begin{enumerate}
+\setlength\itemsep{0.6em}
+\item What is version control, and why use it?
+\item Getting set up -- good file management
+\item Setting up \href{https://www.github.com}{GitHub}
+\item The \href{https://desktop.github.com/}{GitHub Desktop} tutorial
+\item Independent work using version control
+\end{enumerate}
+
+# What is version control, and why use it?
+
+\begin{center}
+\includegraphics[width=300px]{images/duthiefalcy.png}
+\end{center}
+
+# What version control software does
+
+\begin{itemize}
+\setlength\itemsep{1em}
+\item Software that records changes you make to files over time
+\begin{itemize}
+\item Manage different {\it versions} of files (no need to `Save As...')
+\item Recover old files, keep track of file changes
+\item Collaborate with others on shared files
+\end{itemize}
+\end{itemize} \pause
+
+\vspace{6 mm}
+\hrule
+\vspace{6 mm}
+
+\begin{itemize}
+\setlength\itemsep{1em}
+\item {\bf Put more intuitively}, version control takes a snapshot in time (called a '{\bf commit}') of all the files in one of your folders (called '{\bf repositories}')
+\begin{itemize}
+\item Visualise changes to your files over time
+\item Look at the differences between file versions
+\item Record who changed files, and what they changed
+\end{itemize}
+\end{itemize}
+
+# Inside of a project on version control
+
+\begin{center}
+\includegraphics[width=280px]{images/RMS_rep_eg.png}
+\end{center}
+
+\vspace{5mm}
+
+Folders (a.k.a, 'repositories') include all data files, R code, notes, manuscript drafts, etc.
+
+
+# Full annotated timeline of folder changes (GitHub)
+
+\begin{center}
+\includegraphics[width=300px]{images/vc_timeline_intro.png}
+\end{center}
+
+# Parallel versions ('branches') of a folder
+
+\begin{center}
+\includegraphics[width=300px]{images/GitKraken_collaborate.png}
+\end{center}
+
+# Clear breakdown of what has changed
+
+\begin{center}
+\includegraphics[width=300px]{images/GitHub_129.png}
+\end{center}
+
+# Version control makes science easier
+
+
+\begin{itemize}
+\setlength\itemsep{0.8em}
+\item \textbf{Organises files} by avoiding `save as' multiple versions 
+\begin{itemize}
+\item analysis\_1.R
+\item analysis\_2.R
+\item analysis\_FINAL.R
+\item analysis\_FINAL\_no\_really\_this\_time.R
+\end{itemize} \pause
+\item \textbf{Provides a clear history} of what you have done, when, and why (through commit comments) \pause
+\item \textbf{Saves time} by avoiding loss of data, analysis, or writing when integrating with \href{http://github.com}{GitHub} \pause
+\item \textbf{Gives peace of mind} to experiment by removing any fear of breaking something that you know works
+\end{itemize}
+
+# Version control can help open science
+
+\begin{columns}
+\begin{column}{0.35\textwidth}  
+    \begin{center}
+    \begin{itemize}
+     \item[] \includegraphics[width=70px]{images/github_logo.png} \vspace{5 mm}
+     \item[] \includegraphics[width=70px]{images/gitlab.png} \vspace{5 mm}
+     \end{itemize}
+     \end{center}
+\end{column}
+\begin{column}{0.65\textwidth}
+\begin{itemize}
+\setlength\itemsep{1em}
+\item Transparent record of data collection, analysis, and writing
+\item Record publicly available on \href{http://github.com}{GitHub}, \href{http://bitbucket.org}{Bitbucket}, or \href{http://gitlab.com}{GitLab}
+\item GitHub repository can be copied, reproduced, and discussed
+\item \href{https://git-scm.com/}{git} and GitHub can track individual contributions to a project
+\end{itemize}
+\end{column}
+\end{columns}
+
+# Most researchers use git (and GitHub)
+
+\begin{columns}
+\begin{column}{0.35\textwidth}  
+    \begin{center}
+    \begin{itemize}
+     \item[] \includegraphics[width=70px]{images/git.png}
+     \end{itemize}
+     \end{center}
+\end{column}
+\begin{column}{0.65\textwidth}
+\begin{itemize}
+\setlength\itemsep{1em}
+\item Free and open-source
+\item Separate from \href{http://github.com}{GitHub} \pause
+\item Works across platforms
+\begin{itemize}
+\item Windows
+\item Linux
+\item Mac
+\end{itemize}
+\item Invented by \href{https://en.wikipedia.org/wiki/Linus_Torvalds}{Linus Torvalds}
+\end{itemize}
+\end{column}
+\end{columns}
+
