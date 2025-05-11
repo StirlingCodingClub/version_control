@@ -32,8 +32,7 @@ urlcolor: blue
 \hrule
 \vspace{2mm}
 
-https://bradduthie.github.io/notes/vc_notes.html
-
+https://stirlingcodingclub.github.io/version_control
 
 # Rough outline of version control
 
