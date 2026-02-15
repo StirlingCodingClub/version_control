@@ -2,7 +2,7 @@
 title: "An introduction version control"
 subtitle: "https://stirlingcodingclub.github.io/version_control.pdf"
 author: "Brad Duthie (alexander.duthie@stir.ac.uk)"
-date: "13 January 2023"
+date: "13 May 2025"
 output:
   beamer_presentation: default
 header-includes:
